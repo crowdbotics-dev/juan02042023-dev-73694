@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Newmodel
-from .serializers import NewmodelSerializer
+from home.models import Cat,Newmodel
+from .serializers import CatSerializer,NewmodelSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -37,3 +37,8 @@ class NewmodelViewSet(viewsets.ModelViewSet):
     serializer_class = NewmodelSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Newmodel.objects.all()
+
+class CatViewSet(viewsets.ModelViewSet):
+    serializer_class = CatSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Cat.objects.all()
