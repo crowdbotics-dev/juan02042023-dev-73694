@@ -9,3 +9,6 @@ class Cat(models.Model):
     age = models.IntegerField()
     color = models.CharField(max_length=256,)
     is_fluffy = models.BooleanField()
+class Dog(models.Model):
+    'Generated Model'
+    name = models.BigIntegerField()
