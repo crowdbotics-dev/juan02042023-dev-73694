@@ -12,3 +12,7 @@ class Cat(models.Model):
 class Dog(models.Model):
     'Generated Model'
     name = models.BigIntegerField()
+class Wolf(models.Model):
+    'Generated Model'
+    cousin = models.ForeignKey("home.Dog",on_delete=models.CASCADE,related_name="wolf_cousin",)
+    name = models.CharField(max_length=256,null=True,blank=True,)
